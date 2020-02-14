@@ -1,0 +1,150 @@
+﻿@model Respository.respository.UserRespository
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>UserDetails</h2>
+
+
+Display of ViewData
+
+
+
+@if (ViewData != null)
+{
+
+
+    <table border="1">
+        <tr>
+            <th>
+                UserName
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                UserRollNumber
+            </th>
+            <th>
+                UserRank
+            </th>
+        </tr>
+        @foreach (var user in ViewData["UserDetails"] as IEnumerable<UserData.Entity.UsersData>)
+        {
+            <tr>
+                <td>
+                    @user.UserName
+                </td>
+                <td>
+                    @user.Gender
+                </td>
+                <td>
+                    @user.RollNumber
+                </td>
+                <td>
+                    @user.Rank
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}
+
+
+
+<h2>UserDetails</h2>
+
+
+Display of ViewBag
+
+
+
+@if (ViewData != null)
+{
+
+
+    <table border="1">
+        <tr>
+            <th>
+                UserName
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                UserRollNumber
+            </th>
+            <th>
+                UserRank
+            </th>
+        </tr>
+        @foreach (var user in ViewBag.User)
+        {
+            <tr>
+                <td>
+                    @user.UserName
+                </td>
+                <td>
+                    @user.Gender
+                </td>
+                <td>
+                    @user.RollNumber
+                </td>
+                <td>
+                    @user.Rank
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}
+
+
+
+<h2>GetUsers</h2>
+
+Display of TempData
+
+@if (ViewData != null)
+{
+
+
+    <table border="1">
+        <tr>
+            <th>
+                UserName
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                UserRollNumber
+            </th>
+            <th>
+                UserRank
+            </th>
+        </tr>
+        @foreach (var user in TempData["Users"] as IEnumerable<UserData.Entity.UsersData>)
+        {
+            <tr>
+                <td>
+                    @user.UserName
+                </td>
+                <td>
+                    @user.Gender
+                </td>
+                <td>
+                    @user.RollNumber
+                </td>
+                <td>
+                    @user.Rank
+                </td>
+            </tr>
+        }
+
+    </table>
+
+}
